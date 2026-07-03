@@ -1,106 +1,5 @@
 #!/bin/bash
 
-change_wallpaper(){
-	THEME="$1"
-
-	case $THEME in
-
-		"Purple-Swirl")
-		 	pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Purple-Swirl/config/Wallpaper/city.jpg -m fill &
-		;;
-
-		"Green-Forest")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Green-Forest/config/Wallpaper/Forest.jpg -m fill &
-		;;
-
-		"Shadow-Dance")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Shadow-Dance/config/Wallpaper/GirlAnime.png -m fill &
-		;;
-
-		"Blue-Depression")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Blue-Depression/config/Wallpaper/Wallpaper.jpg -m fill &
-	esac
-}
-
-apply_theme(){
-	THEME="$1"
-
-	cp -rf ~/centrixOS/themes/$THEME/config/hypr ~/.config/
- 	cp -rf ~/centrixOS/themes/$THEME/config/kitty ~/.config/
-	cp -rf ~/centrixOS/themes/$THEME/config/wofi ~/.config/
-	cp -rf ~/centrixOS/themes/$THEME/config/wlogout ~/.config/
-	cp -rf centrixOS/themes/$THEME/config/btop.conf ~/.config/btop
-	cp ~/centrixOS/themes/$THEME/config/starship.toml ~/.config/
-
-	kitten @ load-config
-
-	change_wallpaper "$THEME"
-}
-
-change() {
-	while true; do
-		clear
-
-cat << "EOF"
-  _______                        ________                
- / ___/ /  ___ ____  ___ ____   /_  __/ /  ___ __ _  ___ 
-/ /__/ _ \/ _ `/ _ \/ _ `/ -_)   / / / _ \/ -_)  ' \/ -_)
-\___/_//_/\_,_/_//_/\_, /\__/   /_/ /_//_/\__/_/_/_/\__/ 
-                   /___/                                 
-
-*---------------------------------------------*
-| What theme do you want to use in CentrixOS? |
-*---------------------------------------------*
-| 1) Purple-Swirl.                            |
-| 2) Green-Forest.                            |
-| 3) Shadow-Dance.                            |
-| 4) Blue-Depression.                         |
-| 0) Exit.                                    |
-*---------------------------------------------*
-
-*---------------------------------------------*
-| When selecting a new CentrixOS theme, ALL   |
-| the aesthetic modifications you have made   |
-| will be deleted. A backup is recommended.   |
-*---------------------------------------------*
-EOF
-	read -p "Ingrese su opción: " opcionCHANGE
-	case $opcionCHANGE in
-
-		1)
-		  apply_theme "Purple-Swirl"
-		;;
-
-		2)
-		  apply_theme "Green-Forest"
-		;;
-
-		3)
-		  apply_theme "Shadow-Dance"
-		;;
-
-		4)
-		  apply_theme "Blue-Depression"
-		;;
-
-		0)
-		 clear
-		 exit 0
-		;;
-
-		*)
-		 echo "Orden no encontrada."
-		 sleep 1
-		;;
-
-esac
-done
-}
-
 install() {
 	while true; do
 		clear
@@ -123,7 +22,7 @@ cat << "EOF"
 | restart the system.                                 |
 *-----------------------------------------------------*
 EOF
-	read -p "Ingrese su opción: " opcionINSTALL
+	read -p "Enter your order: " opcionINSTALL
 	case $opcionINSTALL in
 
 		1)
@@ -141,20 +40,26 @@ EOF
 				wofi \
 				zsh \
 				alsa-utils \
-				ranger wlogout \
+				ranger \
 				curl \
 				wget \
 				starship \
 				btop \
 				grim \
 				chromium \
-				fonts-jetbrains-mono
+				fonts-jetbrains-mono \
+				hyprland-guiutils \
+				qemu-system-x86
 
 			REAL_USER=${SUDO_USER:-$USER}
 			sudo chsh -s /usr/bin/zsh "$REAL_USER"
 			
-			apply_theme "Purple-Swirl"	
+			cp -rf ~/centrixOS/themes/Purple-Swirl/config/hypr ~/.config/
+ 			cp -rf ~/centrixOS/themes/Purple-Swirl/config/kitty ~/.config/
+			cp -rf ~/centrixOS/themes/Purple-Swirl/config/btop.conf ~/.config/btop
+			cp ~/centrixOS/themes/Purple-Swirl/config/starship.toml ~/.config/	
 
+			cp -rf ~/centrixOS/config_basic/wofi ~/.config
 			cp -rf ~/centrixOS/config_basic/waybar ~/.config
 			cp -rf ~/centrixOS/config_basic/applications ~/.local/share
 			cp -rf ~/centrixOS/config_basic/fastfetch ~/.config
@@ -168,7 +73,7 @@ EOF
 		;;
 
 		*)
-		 echo "Orden no encontrada."
+		 echo "Order not found."
 		 sleep 1
 		;;
 
@@ -200,14 +105,13 @@ cat << "EOF"
 
 *--------------------------------------*
 | 1) Install CentrixOS.                |
-| 2) Change theme.                     |
-| 3) Enable Debian Trixie/Backports.   |
+| 2) Enable Debian Trixie/Backports.   |
 | 0) Exit.                             |
 *--------------------------------------*
 | Code developed by JIRT2007           |
 *--------------------------------------*
 EOF
-	read -p "Ingresar su opción: " opcionMENU
+	read -p "Enter your order: " opcionMENU
 	case $opcionMENU in
 
 		1) 
@@ -215,10 +119,6 @@ EOF
 		;;
 
 		2)
-		  change
-		;;
-
-		3)
 		  sudo cp ~/centrixOS/config_basic/debian-backports.sources  /etc/apt/sources.list.d/
 		  sudo apt-get update
 		;;
@@ -229,7 +129,7 @@ EOF
 		;;
 
 		*)
-		  echo "Orden no encontrada."
+		  echo "Order not found."
 		  sleep 1
 		;;
 

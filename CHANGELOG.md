@@ -1,5 +1,14 @@
 # Registro de cambios:
 
+### Notas v0.0.8 (Inestable):
+- Se decidio en mantener la web oficial del proyecto en ingles y el repositorio principal en español.
+- Se removio wlogout.
+- Nueva utilidad para el sistema llamada "Centrix control" la misma se ejecuta desde terminal y puede iniciarse mediante el comando `ctrix` y permite una automatización de herramientas simples donde se incluye el selector de temas para customizar CentrixOS, un menu de gestion de energia y un menu simple para gestionar VMs mediante QEMU.
+- Se incorporo QEMU para CPUs x86_64 en la instalación del sistema.
+- La versión 0.0.8 de CentrixOS sera la ultima en funcionar con base Debian 13 Trixie, para la v0.0.9 la base para la capa de personalización sera ArchLinux y se incorporara una nueva reforma a los temas de customización y se implementara el lenguaje `.lua` para la configuración de Hyprland.
+- La v0.0.8 aun estara disponible para descargar en la web pero la misma ya no recibira actualizaciones.
+- Este cambio de base no es definitivo y puede estar sujeto a reimplementaciones a otras bases.
+
 ### Notas v0.0.7 (Inestable):
 - Se cancelo la opción para tener Sway como entorno de escritorio alternativo a Hyprland y se deja este ultimo como unica opción.
 - Oficialmente el proyecto de CentrixOS tiene su propia web mediante GitHub Pages. https://jirt2007.github.io/webCENTRIX/
