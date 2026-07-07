@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Alsa
-Exec=kitty -e alsamixer
-Terminal=false
-Type=Application

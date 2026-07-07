@@ -17,7 +17,7 @@
     {
      "type": "custom",
      "key": "Customization",
-     "format": "CentrixOS [Debian GNU/Linux]"
+     "format": "CentrixCL [GNU/Linux]"
     },
 "separator",
     "kernel", 

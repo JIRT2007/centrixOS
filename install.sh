@@ -5,15 +5,17 @@ install() {
 		clear
 
 cat << "EOF"
-   ____         __       ____
-  /  _/__  ___ / /____ _/ / /
- _/ // _ \(_-</ __/ _ `/ / / 
-/___/_//_/___/\__/\_,_/_/_/  
-                         
+
+ ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
+ ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     
+ ██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     
+ ██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     
+ ██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
+ ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝                   
 *-----------------------------------------------------*
 | Do you want to install the customization layer?     |
 *-----------------------------------------------------*
-| 1) Yes, install CentrixOS.                          |
+| 1) Yes, install CentrixCL.                          |
 | 0) Exit.                                            |
 *-----------------------------------------------------*
 
@@ -29,41 +31,41 @@ EOF
 			mkdir -p ~/.config
 			mkdir -p ~/.local/share
 
-			sudo apt install -y -t trixie-backports hyprland
-    			sudo apt install -y -t trixie-backports xdg-desktop-portal-hyprland
-			sudo apt install -y -t trixie-backports waybar
-
-			sudo apt install -y \
+			sudo pacman -S --needed --noconfirm hyprland \
+			       	hyprpaper \
 				kitty \
 				fastfetch \
-				swaybg \
-				wofi \
+				fuzzel \
 				zsh \
+				starship \
 				alsa-utils \
 				ranger \
 				curl \
 				wget \
-				starship \
 				btop \
-				grim \
 				chromium \
-				fonts-jetbrains-mono \
-				hyprland-guiutils \
-				qemu-system-x86
+				ttf-jetbrains-mono-nerd \
+				qemu-system-x86 \
+				qemu-desktop \
+				waybar \
+				playerctl \
+				hyprshot \
+				vim
 
 			REAL_USER=${SUDO_USER:-$USER}
 			sudo chsh -s /usr/bin/zsh "$REAL_USER"
 			
-			cp -rf ~/centrixOS/themes/Purple-Swirl/config/hypr ~/.config/
- 			cp -rf ~/centrixOS/themes/Purple-Swirl/config/kitty ~/.config/
-			cp -rf ~/centrixOS/themes/Purple-Swirl/config/btop.conf ~/.config/btop
-			cp ~/centrixOS/themes/Purple-Swirl/config/starship.toml ~/.config/	
+			cp -rf ~/CentrixCL/themes/Retro-Punch/hypr ~/.config/
+ 			cp -rf ~/CentrixCL/themes/Retro-Punch/kitty ~/.config/
+			cp ~/CentrixCL/themes/Retro-Punch/starship.toml ~/.config/	
 
-			cp -rf ~/centrixOS/config_basic/wofi ~/.config
-			cp -rf ~/centrixOS/config_basic/waybar ~/.config
-			cp -rf ~/centrixOS/config_basic/applications ~/.local/share
-			cp -rf ~/centrixOS/config_basic/fastfetch ~/.config
-			cp ~/centrixOS/config_basic/.zshrc ~/.zshrc
+			cp -rf ~/CentrixCL/config_basic/fuzzel ~/.config
+			cp -rf ~/CentrixCL/config_basic/waybar ~/.config
+			cp -rf ~/CentrixCL/config_basic/applications ~/.local/share
+			cp -rf ~/CentrixCL/config_basic/fastfetch ~/.config
+
+			cp ~/CentrixCL/config_basic/.zshrc ~/.zshrc
+			cp ~/CentrixCL/config_basic/.zprofile ~/.zprofile
 		 exit 0
 		;;
 
@@ -86,26 +88,15 @@ while true; do
 	clear
 
 cat << "EOF"
- 
- ██████████████████████████████████
- ██                              ██
- ██  ██████████████████████████
- ██  ██                      ██
- ██  ██  ██████████████████  ██
- ██  ██  ██              ██  ██
- ██  ██  ██  ██████████████  ██
- ██  ██  ██              ██  ██
- ██  ██  ██████████████  ██  ██
- ██  ██  ██              ██  ██
- ██  ██  ██████████████████  ██
- ██  ██                      ██
- ██  ██████████████████████████
- ██                              ██
- ██████████████████████████████████
 
+  ██████╗███████╗███╗   ██╗████████╗██████╗ ██╗██╗  ██╗     ██████╗██╗     
+ ██╔════╝██╔════╝████╗  ██║╚══██╔══╝██╔══██╗██║╚██╗██╔╝    ██╔════╝██║     
+ ██║     █████╗  ██╔██╗ ██║   ██║   ██████╔╝██║ ╚███╔╝     ██║     ██║     
+ ██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗██║ ██╔██╗     ██║     ██║     
+ ╚██████╗███████╗██║ ╚████║   ██║   ██║  ██║██║██╔╝ ██╗    ╚██████╗███████╗
+  ╚═════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝     ╚═════╝╚══════╝                         
 *--------------------------------------*
-| 1) Install CentrixOS.                |
-| 2) Enable Debian Trixie/Backports.   |
+| 1) Install CentrixCL.                |
 | 0) Exit.                             |
 *--------------------------------------*
 | Code developed by JIRT2007           |
@@ -116,11 +107,6 @@ EOF
 
 		1) 
 		  install
-		;;
-
-		2)
-		  sudo cp ~/centrixOS/config_basic/debian-backports.sources  /etc/apt/sources.list.d/
-		  sudo apt-get update
 		;;
 
 		0)

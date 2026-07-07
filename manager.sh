@@ -10,50 +10,17 @@
 
 ### START (themeMANAGER apply-theme) ###
 
-change_wallpaper(){
-	THEME="$1"
-
-	case $THEME in
-
-		"Purple-Swirl")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Purple-Swirl/config/Wallpaper/city.jpg -m fill &
-		;;
-
-		"Green-Forest")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Green-Forest/config/Wallpaper/Forest.jpg -m fill &
-		;;
-
-		"Shadow-Dance")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Shadow-Dance/config/Wallpaper/GirlAnime.png -m fill &
-		;;
-
-		"Blue-Depression")
-			pkill swaybg 2>/dev/null
-			swaybg -i ~/centrixOS/themes/Blue-Depression/config/Wallpaper/Wallpaper.jpg -m fill &
-	esac
-}
-
 apply_theme(){
 	THEME="$1"
 
-	cp -rf ~/centrixOS/themes/$THEME/config/hypr ~/.config/
- 	cp -rf ~/centrixOS/themes/$THEME/config/kitty ~/.config/
-	cp -rf ~/centrixOS/themes/$THEME/config/wlogout ~/.config/
-	cp -rf ~/centrixOS/themes/$THEME/config/btop.conf ~/.config/btop
-	cp ~/centrixOS/themes/$THEME/config/starship.toml ~/.config/
+	cp -rf ~/centrixOS/themes/$THEME/hypr ~/.config/
+ 	cp -rf ~/centrixOS/themes/$THEME/kitty ~/.config/
+	cp -rf ~/centrixOS/themes/$THEME/btop.conf ~/.config/btop
+	cp ~/centrixOS/themes/$THEME/starship.toml ~/.config/
 
 	kitten @ load-config
-
-	change_wallpaper "$THEME"
 }
 ### END (themeMANAGER apply-theme) ###
-
-
-
-
 
 #############################
 # Power manger              #
@@ -64,11 +31,13 @@ powerMANAGER() {
 		clear
 
 cat << "EOF"
-   ___                       __  ___                           
-  / _ \___ _    _____ ____  /  |/  /__ ____  ___ ____ ____ ____
- / ___/ _ \ |/|/ / -_) __/ / /|_/ / _ `/ _ \/ _ `/ _ `/ -_) __/
-/_/   \___/__,__/\__/_/   /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/   
-                                                /___/          
+
+ ██████╗  ██████╗ ██╗    ██╗███████╗██████╗     ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
+ ██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗    ████╗ ████║██╔════╝████╗  ██║██║   ██║
+ ██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝    ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║
+ ██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗    ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║
+ ██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║    ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝
+ ╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝      
 *---------------------------*
 | 1) Shutdown.              |
 | 2) Reboot.                |
@@ -114,18 +83,17 @@ themeMANAGER() {
 		clear
 
 cat << "EOF"
- ________                   __  ___                           
-/_  __/ /  ___ __ _  ___   /  |/  /__ ____  ___ ____ ____ ____
- / / / _ \/ -_)  ' \/ -_) / /|_/ / _ `/ _ \/ _ `/ _ `/ -_) __/
-/_/ /_//_/\__/_/_/_/\__/ /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/   
-                                               /___/          
+
+ ████████╗██╗  ██╗███████╗███╗   ███╗███████╗███████╗
+ ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝██╔════╝
+    ██║   ███████║█████╗  ██╔████╔██║█████╗  ███████╗
+    ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝  ╚════██║
+    ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗███████║
+    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚══════╝
 *--------------------------*
 | Change theme:            |
 *--------------------------*
-| 1) Purple-Swirl.         |
-| 2) Green-Forest.         |
-| 3) Shadow-Dance.         |
-| 4) Blue-Depression.      |
+| 1) Retro-Punch.          |        
 |--------------------------|
 | 0) Back.                 |
 *--------------------------*
@@ -134,19 +102,19 @@ EOF
 	case $optionTHEME in
 
 		1)
-		  apply_theme "Purple-Swirl"	
+		  apply_theme "Retro-Punch"	
 		;; 
 		
 		2)
-		  apply_theme "Green-Forest"
+		  apply_theme ""
 		;; 
 		
 		3)
-		  apply_theme "Shadow-Dance"
+		  apply_theme ""
 		;; 
 		
 		4)
-		  apply_theme "Blue-Depression"	
+		  apply_theme ""	
 		;; 
 		
 		0)
@@ -170,11 +138,13 @@ qemuMANAGER() {
 		clear
 
 cat << "EOF"
-  ____    ______  _____  __    __  ___                           
- / __ \  / __/  |/  / / / /   /  |/  /__ ____  ___ ____ ____ ____
-/ /_/ / / _// /|_/ / /_/ /   / /|_/ / _ `/ _ \/ _ `/ _ `/ -_) __/
-\___\_\/___/_/  /_/\____/   /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/   
-                                                  /___/          
+
+  ██████╗ ███████╗███╗   ███╗██╗   ██╗
+ ██╔═══██╗██╔════╝████╗ ████║██║   ██║
+ ██║   ██║█████╗  ██╔████╔██║██║   ██║
+ ██║▄▄ ██║██╔══╝  ██║╚██╔╝██║██║   ██║
+ ╚██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝
+  ╚══▀▀═╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝    
 *----------------------------*
 | 1) Create .qcow2 file.     |
 | 2) Create virtual machine. |
@@ -224,26 +194,116 @@ done
 }
 
 #############################
+# SSH manager               #
+#############################
+sshMANAGER() {
+	while true; do
+		clear
+
+cat << "EOF" 
+
+ ███████╗███████╗██╗  ██╗
+ ██╔════╝██╔════╝██║  ██║
+ ███████╗███████╗███████║
+ ╚════██║╚════██║██╔══██║
+ ███████║███████║██║  ██║
+ ╚══════╝╚══════╝╚═╝  ╚═╝
+*-----------------------------------------------------*
+| 1) Connect by SSH.                                  |
+| 2) Connect by SSH (localhost via port 2222).        |
+| 3) Send by SSH.                                     |
+| 4) Send by SSH (localhost via port 2222).           |
+| 5) Send directory by SSH.                           |
+| 6) Send directory by SSH. (localhost via port 2222) |
+| 0) Exit.                                            |
+*-----------------------------------------------------* 
+EOF
+	read -p "Enter your order: " optionSSH
+	case $optionSSH in
+
+		1) 
+		  read -p "Enter IP address: " optionIP
+	  	  read -p "Enter user name: " optionNAME
+
+		  ssh "$optionNAME@$optionIP"	  
+		;;
+
+		2)
+		  read -p "Enter user name: " optionNAME_SSH_LOCALHOST
+
+		  ssh -p 2222 "$optionNAME_SSH_LOCALHOST"@localhost
+		;;
+
+		3)
+		  read -p "Enter location of the file: " optionFILE_SCP_FILE
+		  read -p "Enter user name: " optionNAME_SCP_FILE
+		  read -p "Enter IP address: " optionIP_SCP_FILE
+		  read -p "Enter the destination: " optionDESTINATION_SCP_FILE
+
+		  scp "$optionFILE_SCP_FILE" "$optionNAME_SCP_FILE@$optionIP_SCP_FILE:$optionDESTINATION_SCP_FILE"
+		;;
+
+		4)
+		  read -p "Enter location of the file: " optionFILE_SCP_FILE_LOCALHOST
+		  read -p "Enter user name: " optionNAME_SCP_FILE_LOCALHOST
+		  read -p "Enter the destination: " optionDESTINATION_SCP_FILE_LOCALHOST
+
+		  scp -P 2222 "$optionFILE_SCP_FILE_LOCALHOST" "$optionNAME_SCP_FILE_LOCALHOST"@localhost:"$optionDESTINATION_SCP_FILE_LOCALHOST"
+		;;
+
+		5)
+		  read -p "Enter location of the directory: " optionDIRECTORY_SCP_DIRECTORY
+		  read -p "Enter user name: " optionNAME_SCP_DIRECTORY
+		  read -p "Enter IP address: " optionIP_SCP_DIRECTORY
+		  read -p "Enter the destination: " optionDESTINATION_SCP_DIRECTORY
+
+		 scp -r "$optionDIRECTORY_SCP_DIRECTORY" "$optionNAME_SCP_DIRECTORY@$optionIP_SCP_DIRECTORY:$optionDESTINATION_SCP_DIRECTORY"
+		;;
+
+		6)
+		  read -p "Enter location of the directory: " optionDIRECTORY_SCP_DIRECTORY_LOCALHOST
+		  read -p "Enter user name: " optionNAME_SCP_DIRECTORY_LOCALHOST
+		  read -p "Enter the destination: " optionDESTINATION_SCP_DIRECTORY_LOCALHOST
+
+		  scp -P 2222 -r "$optionDIRECTORY_SCP_DIRECTORY_LOCALHOST" "$optionNAME_SCP_DIRECTORY_LOCALHOST"@localhost:"$optionDESTINATION_SCP_DIRECTORY_LOCALHOST"
+		;;
+
+		0)
+		  return	
+		;;
+
+		*)
+		  echo "Order not found."
+		  sleep 1
+		;;
+
+
+
+esac
+done
+}
+
+#############################
 # CentrixOS control manager #
 #############################
 while true; do
 	clear
 
 cat << "EOF"
-  _____         __      _        _____          __           __  
- / ___/__ ___  / /_____(_)_ __  / ___/__  ___  / /________  / /  
-/ /__/ -_) _ \/ __/ __/ /\ \ / / /__/ _ \/ _ \/ __/ __/ _ \/ /   
-\___/\__/_//_/\__/_/ /_//_\_\  \___/\___/_//_/\__/_/  \___/_/    
-                                                 
+
+  ██████╗███╗   ███╗███████╗███╗   ██╗██╗   ██╗
+ ██╔════╝████╗ ████║██╔════╝████╗  ██║██║   ██║
+ ██║     ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║
+ ██║     ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║
+ ╚██████╗██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝
+  ╚═════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝    
 *----------------------------*
 | 1) Power manager.          |
-| 2) Theme manager.          |
-| 3) QEMU manager.           |
+| 2) QEMU manager.           |
+| 3) SSH manager.            |
 | 0) Exit.                   |
 |----------------------------|
 | Developed by JIRT2007      |
-|----------------------------|
-| Version 0.0.1              |
 *----------------------------*
 EOF
 	read -p "Enter your order: " optionMAIN
@@ -254,11 +314,11 @@ EOF
 		;;
 
 		2)
-		  themeMANAGER
+		  qemuMANAGER
 		;;
 
 		3)
-		  qemuMANAGER
+		  sshMANAGER	
 		;;
 
 		0)

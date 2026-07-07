@@ -5,52 +5,70 @@
 //    "margin-left":10,
 //    "margin-right":10,
 
-    "height": 20,
+    "height": 25,
     //"width": 1400,
     "spacing": 5,
 
     "modules-left": [
-        //"hyprland/window"
-	"clock"
+	"clock",
+	"hyprland/workspaces",
+	"mpris" //Necesita playerctl
     ],
 
-    "modules-center": [        
-    	//"clock",
-	"hyprland/workspaces"
-    ],
+//   "modules-center": [ ],
 
     "modules-right": [
 	"tray",
+	"custom/search",
 	"network",
 	"hyprland/language",
         "pulseaudio",
         "battery",
-        "battery#bat2",
-        "custom/power"
+        "battery#bat2"
     ],
-	
+
+	"mpris": {
+    		"format": "{player_icon} {dynamic}",
+    		"dynamic-len": 40,
+    		"player-icons": {
+        		"chromium": "",
+        		"firefox": "󰈹",
+        		"default": "󰎈"
+    				},
+    		
+		"status-icons": {
+        		"playing": "",
+        		"paused": ""
+    				},
+
+    		"on-click": "playerctl play-pause",
+    		"on-click-right": "playerctl stop",
+    		"on-scroll-up": "playerctl next",
+    		"on-scroll-down": "playerctl previous"
+		},
+
     "hyprland/language": {
  	"format": "{}",
     	"on-click": "hyprctl switchxkblayout all next",
 		"rewrite": {
         		"Spanish": "ES",
         		"English": "US"
-    		}
-    },
+    			   }
+    			},
 
     "tray": {
         "spacing": 10
-    },
+    	    },
 
     "clock": {
         "format": "{:%A - %d/%m/%Y - %H:%M}",
-    },
+    	     },
     
     "battery": {
-
         "states": {
             "warning": 30,
-            "critical": 15 },
+            "critical": 15 
+		  },
 
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
@@ -58,17 +76,17 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
-    },
+    		},
 
     "battery#bat2": {
         "bat": "BAT2"
-    },
+    		    },
 
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-icons": {"default": ["", "", ""]},
         "on-click": "kitty -e alsamixer"
-    },
+    		  },
 
     "network": {
         "format-wifi": "{essid} ",
@@ -77,7 +95,7 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
 	"on-click": "kitty -e nmtui"
-    },
+    	       },
 
     "hyprland/workspaces": {
     	"format": "{id}",
@@ -87,6 +105,6 @@
     	"on-scroll-up": "hyprctl dispatch workspace e+1",
     	"on-scroll-down": "hyprctl dispatch workspace e-1",
     	"disable-scroll": false
-}
+			   }
 
 }}

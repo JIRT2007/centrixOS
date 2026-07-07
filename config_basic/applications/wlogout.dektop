@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Power Menu
-Exec=wlogout
-Icon=system-shutdown
-Type=Application
-Categories=System;
-Terminal=false
-

@@ -1,5 +1,13 @@
 # Registro de cambios:
 
+### Notas v0.0.9:
+- CentrixOS presenta su nueva version 0.0.9 sobre ArchLinux como base, esto presenta una nueva customización con un tema nuevo llamado "Retro-Punch" y con un nuevo nombre que se empezara a emplear en el changelog a partir de la v1.0.0, el mismo se trata de CentrixCL (Customization Layer).
+- Se sumaron mejorar a la utilidad de `cmenu` para ofrecer una gestión basica del protocolo SSH, el mismo necesita ser instalado previamente a su uso.
+- La nueva configuración de Hyprland se realiza en el lenguaje `.lua` y se emplean nuevos programas como Hyprpaper, Hyprshot, Playerctl, etc.
+- De forma momentanea se suspende la opción para cambiar el tema en la utilidad de `cmenu` hasta que se desarrollen nuevos temas.
+- CentrixOS NO instalara ningun paquete de software el cual de su origen desde AUR, solamente repositorios nativos de ArchLinux.
+- Esta versión puede contener fallas que seran solucionadas en proximos lanzamientos.
+
 ### Notas v0.0.8 (Inestable):
 - Se decidio en mantener la web oficial del proyecto en ingles y el repositorio principal en español.
 - Se removio wlogout.

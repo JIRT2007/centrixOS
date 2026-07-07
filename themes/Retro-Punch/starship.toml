@@ -11,13 +11,13 @@ $python\
 $character"""
 
 [directory]
-style = "fg:#828282"
+style = "fg:#5533D1"
 
 [character]
-success_symbol = "[-❯](fg:#ffffff)"
+success_symbol = "[-❯](fg:#FB1FEA)"
 
-error_symbol = "[-❯](fg:#FF2E2E)"
-vimcmd_symbol = "[❮-](fg:#CB2EFF)"
+error_symbol = "[-❯](fg:#D13360)"
+vimcmd_symbol = "[❮-](fg:#D0E2A9)"
 
 [git_branch]
 format = "[$branch]($style)"
