@@ -12,13 +12,13 @@
 
 .module{
 	padding:0 15px;
-	background:#333333; 
-	margin:4px 4px 0 4px;
+	background:#1f1f1f; 
+	margin:0 1px;
 	border-radius:50px;
 }
 
 window#waybar {
-    background-color:transparent;
+    background-color:#1f1f1f;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 1.5s;
@@ -38,6 +38,7 @@ window#waybar {
 #workspaces button:hover{
     background: transparent;
     box-shadow: none;
+    border:transparent;
     color:grey;
 }
 

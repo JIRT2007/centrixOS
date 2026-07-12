@@ -23,7 +23,7 @@ NC='\e[0m'
 
 version() {
 echo -e "
-${RED}CentrixCL v0.0.9${NC}
+${RED}CentrixCL v0.1.0${NC}
 ----------------------
 ${RED}Developer  :${NC} JIRT2007
 ${RED}Repository :${NC} https://github.com/JIRT2007/CentrixCL

@@ -1,5 +1,9 @@
 # Registro de cambios:
 
+### Notas v0.1.0:
+- Se incluyeron nuevos temas para personalizar CentrixCL.
+- Se removio el modulo de mpris para Waybar mas el mismo sigue estando en el codigo `config.jsonc`, solo es necesario descomentarlo.
+
 ### Notas v0.0.9:
 - CentrixOS presenta su nueva version 0.0.9 sobre ArchLinux como base, esto presenta una nueva customización con un tema nuevo llamado "Retro-Punch" y con un nuevo nombre que se empezara a emplear en el changelog a partir de la v1.0.0, el mismo se trata de CentrixCL (Customization Layer).
 - Se sumaron mejorar a la utilidad de `cmenu` para ofrecer una gestión basica del protocolo SSH, el mismo necesita ser instalado previamente a su uso.

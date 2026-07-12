@@ -13,12 +13,19 @@
 apply_theme(){
 	THEME="$1"
 
-	cp -rf ~/centrixOS/themes/$THEME/hypr ~/.config/
- 	cp -rf ~/centrixOS/themes/$THEME/kitty ~/.config/
-	cp -rf ~/centrixOS/themes/$THEME/btop.conf ~/.config/btop
-	cp ~/centrixOS/themes/$THEME/starship.toml ~/.config/
+	cp -rf ~/CentrixCL/themes/$THEME/hypr ~/.config/
+ 	cp -rf ~/CentrixCL/themes/$THEME/kitty ~/.config/
+	cp -rf ~/CentrixCL/themes/$THEME/waybar ~/.config/
+	cp -rf ~/CentrixCL/themes/$THEME/fuzzel ~/.config/
+	cp ~/CentrixCL/themes/$THEME/starship.toml ~/.config/
 
 	kitten @ load-config
+
+	pkill hyprpaper
+	systemctl --user enable --now hyprpaper.service
+
+	killall waybar 2>/dev/null
+	waybar >/dev/null 2>&1 &
 }
 ### END (themeMANAGER apply-theme) ###
 
@@ -93,7 +100,8 @@ cat << "EOF"
 *--------------------------*
 | Change theme:            |
 *--------------------------*
-| 1) Retro-Punch.          |        
+| 1) Retro-Punch.          |
+| 2) Dark-Society.         |    
 |--------------------------|
 | 0) Back.                 |
 *--------------------------*
@@ -106,7 +114,7 @@ EOF
 		;; 
 		
 		2)
-		  apply_theme ""
+		  apply_theme "Dark-Society"
 		;; 
 		
 		3)
@@ -301,6 +309,7 @@ cat << "EOF"
 | 1) Power manager.          |
 | 2) QEMU manager.           |
 | 3) SSH manager.            |
+| 4) Theme manager.          |
 | 0) Exit.                   |
 |----------------------------|
 | Developed by JIRT2007      |
@@ -319,6 +328,10 @@ EOF
 
 		3)
 		  sshMANAGER	
+		;;
+
+		4)
+		  themeMANAGER	
 		;;
 
 		0)

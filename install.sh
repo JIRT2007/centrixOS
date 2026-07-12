@@ -40,9 +40,6 @@ EOF
 				starship \
 				alsa-utils \
 				ranger \
-				curl \
-				wget \
-				btop \
 				chromium \
 				ttf-jetbrains-mono-nerd \
 				qemu-system-x86 \
@@ -50,17 +47,18 @@ EOF
 				waybar \
 				playerctl \
 				hyprshot \
-				vim
+				vim \
+				otf-libertinus
 
 			REAL_USER=${SUDO_USER:-$USER}
 			sudo chsh -s /usr/bin/zsh "$REAL_USER"
 			
 			cp -rf ~/CentrixCL/themes/Retro-Punch/hypr ~/.config/
  			cp -rf ~/CentrixCL/themes/Retro-Punch/kitty ~/.config/
+			cp -rf ~/CentrixCL/themes/Retro-Punch/waybar ~/.config/
+			cp -rf ~/CentrixCL/themes/Retro-Punch/fuzzel ~/.config/
 			cp ~/CentrixCL/themes/Retro-Punch/starship.toml ~/.config/	
 
-			cp -rf ~/CentrixCL/config_basic/fuzzel ~/.config
-			cp -rf ~/CentrixCL/config_basic/waybar ~/.config
 			cp -rf ~/CentrixCL/config_basic/applications ~/.local/share
 			cp -rf ~/CentrixCL/config_basic/fastfetch ~/.config
 

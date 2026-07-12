@@ -9,10 +9,10 @@ cat << "EOF"
  ██║     ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗██║ ██╔██╗     ██║     ██║     
  ╚██████╗███████╗██║ ╚████║   ██║   ██║  ██║██║██╔╝ ██╗    ╚██████╗███████╗
   ╚═════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝     ╚═════╝╚══════╝ 
-    Developed by JIRT2007 - https://jirt2007.github.io/webCENTRIX/
+      Developed by JIRT2007 - https://jirt2007.github.io/webCENTRIX/
 
 EOF
-	echo "Iniciando Hyprland..."
-	sleep 3
+	echo "Welcome $USER to CentrixCL :)"
+	sleep 2
 	exec Hyprland
 fi

@@ -1,0 +1,51 @@
+/*margin: top right bottom left*/
+
+* {
+    font-family: "Libertinus Mono";
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#waybar {
+    margin: 6px 10px 0 10px;
+}
+
+.module{
+	padding:0 15px;
+	background:transparent; 
+	margin:0 1px;
+	border-radius:50px;
+}
+
+window#waybar {
+    background-color:#050505;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 1.5s;
+    margin:4px 15px;
+}
+
+#workspaces button {
+    border-radius: 100%;
+    background: transparent;
+    color:grey;
+}
+
+#workspaces button.active {
+    color:white;
+}
+
+#workspaces button:hover{
+    background: transparent;
+    box-shadow: none;
+    border:transparent;
+    color:grey;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
